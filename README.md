@@ -1,97 +1,106 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Zetic LLM Template for React Native
 
-# Getting Started
+A LLM React Native application (iOS and Android) template built with TypeScript and Swift/Kotlin, following current React Native development best practices.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+## React Native Environment
+```bash
+[✓] Node.js (18 or higher)
+[✓] React Native CLI (latest)
+[✓] iOS Development Environment
+    [✓] Xcode 16.3+
+    [✓] CocoaPods
+[✓] Android Development Environment  
+    [✓] Android Studio 2024.3+
+    [✓] Android SDK (API 24+)
+    [✓] Android Emulator or Device
 ```
 
-## Step 2: Build and run your app
+## Project Structure
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+zetic-llm-react-native-template/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── metro.config.js
+├── babel.config.js
+├── tsconfig.json
+├── App.tsx
+├── android/
+├── ios/
+└── src/
+    └── consstatns.ts/
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+## Dependency
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Check in `package.json`
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```json
+{
+    "dependencies": {
+        // ...
+        "react-native-zetic-mlange": "https://github.com/zetic-ai/react-native-zetic-mlange.git",
+        // ...
+    }
+}
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🚀 Quick Start
 
-```sh
-bundle exec pod install
+### 1. Clone the Project
+
+```bash
+git clone https://github.com/zetic-ai/zetic-llm-react-native-template.git
+cd zetic-llm-react-native-template
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### 2. Install Dependencies
 
-```sh
-# Using npm
-npm run ios
+```bash
+# Install Node.js dependencies
+npm install
 
-# OR using Yarn
-yarn ios
+# Install iOS dependencies
+cd ios && pod install && cd ..
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 3. Configure Credentials
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Update your SDK credentials in `src/constants.ts`:
 
-## Step 3: Modify your app
+> If you have no token for SDK, Check [ZeticAI personal settings](https://mlange.zetic.ai/settings?tab=pat)
 
-Now that you have successfully run the app, let's make changes!
+```typescript
+// TODO: Replace with your actual credentials
+export const PERSONAL_ACCESS_KEY = 'YOUR_PERSONAL_ACCESS_TOKEN';
+export const MODEL_KEY = 'YOUR_MODEL_KEY';
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### 4. Build and Run
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```bash
+# Clear Metro cache (recommended)
+npx react-native start --reset-cache
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+# Run on iOS (requires macOS)
+npx react-native run-ios
 
-## Congratulations! :tada:
+# Run on Android
+npx react-native run-android
 
-You've successfully run and modified your React Native App. :partying_face:
+# Run only on real device for best performance
+```
 
-### Now what?
+## 📚 Documentation & Support
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- [ZeticAI Guide](https://docs.zetic.ai) - Zetic AI Docs
+- [React Native Documentation](https://reactnative.dev/docs/getting-started) - React Native Official Docs
+- Feel free to ask us. Create an issue or mail to us ([software@zetic.ai](mailto:software@zetic.ai))
 
-# Troubleshooting
+## 📄 License
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the [MIT LICENSE](LICENSE) file for details.
