@@ -42,9 +42,7 @@ Check in `package.json`
 ```json
 {
     "dependencies": {
-        // ...
-        "react-native-zetic-mlange": "https://github.com/zetic-ai/react-native-zetic-mlange.git",
-        // ...
+        "react-native-zetic-mlange": "github:zetic-ai/react-native-zetic-mlange"
     }
 }
 ```
