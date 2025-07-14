@@ -78,7 +78,34 @@ export const PERSONAL_ACCESS_KEY = 'YOUR_PERSONAL_ACCESS_TOKEN';
 export const MODEL_KEY = 'YOUR_MODEL_KEY';
 ```
 
-### 4. Build and Run
+### 4. Customize Quant Type
+
+Update Quantization in `App.tsx`
+
+```tsx
+// ...
+await ZeticLLM.init(
+    personalAccessKey,
+    modelKey,
+    ZeticLLMTarget.LLAMA_CPP,
+    ZeticQuantType.Q6_K // Change Quant Type what you want
+);
+// ...
+```
+
+#### Available Quant Types
+- LLMQuantType.F16
+- LLMQuantType.BF16
+- LLMQuantType.Q8_0
+- LLMQuantType.Q6_K
+- LLMQuantType.Q4_K_M
+- LLMQuantType.Q3_K_M
+- LLMQuantType.Q2_K
+- LLMQuantType.Q6_K
+
+Check it out [Zetic Model Hub](https://mlange.zetic.ai/dashboard).
+
+### 5. Build and Run
 
 ```bash
 # Clear Metro cache (recommended)
